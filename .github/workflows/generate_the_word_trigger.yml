@@ -22,13 +22,13 @@ jobs:
 
       - name: Run script and save output
         run: |
-          OUTPUT=$(python wordle_fetch.py)
-          echo "$OUTPUT" > output.txt
+          OUTPUT=$(python generate_the_word.py)
+          echo "$OUTPUT" > generated_word.txt
 
-      - name: Commit output.txt
+      - name: Commit generated_word.txt
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add output.txt
+          git add generated_word.txt
           git commit -m "Update daily Wordle answer" || echo "No changes to commit"
           git push
