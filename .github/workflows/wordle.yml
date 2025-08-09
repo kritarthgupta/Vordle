@@ -1,0 +1,34 @@
+name: Fetch Daily Wordle
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Every day at midnight UTC
+  workflow_dispatch:      # Manual trigger
+
+jobs:
+  fetch-wordle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run script and save output
+        run: |
+          OUTPUT=$(python wordle_fetch.py)
+          echo "$OUTPUT" > output.txt
+
+      - name: Commit output.txt
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add output.txt
+          git commit -m "Update daily Wordle answer" || echo "No changes to commit"
+          git push
