@@ -1,5 +1,13 @@
-const WORD = "MUSIC"; // The word to guess, can be changed to any 5-letter word
+// const WORD = "MUSIC"; // The word to guess, can be changed to any 5-letter word
 // document.title = `Vordle - ${WORD}`; // Set the document title dynamically
+let WORD;
+
+fetch("https://raw.githubusercontent.com/kritarthgupta/Vordle/main/generated_word.txt")
+  .then(r => r.text())
+  .then(text => {
+    WORD = text.trim();
+    // console.log(WORD);
+  });
 const board = document.getElementById("game-board");
 const keyboard = document.getElementById("keyboard");
 let currentGuess = "";
@@ -134,4 +142,5 @@ document.addEventListener("keydown", (event) => {
   }
 
 });
+
 
