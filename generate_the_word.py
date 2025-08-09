@@ -12,13 +12,14 @@ start_word_index = answers.index(start_word)
 # Added one to today's date since GitHub Actions use the UTC time zone and the wordle needs
 # to be found for the earliest timezone, i.e., UTC +14.
 # A cron job willrun this script at UTC 10:00
-today = date.today() + timedelta(days=1)
+today = date.today() + timedelta(days=5)
 
 days_from_start= abs((start_date - today).days)
 answer = answers[start_word_index + days_from_start]
 output= answer #"Today's wordle (" + str(today.strftime("%Y-%m-%d")) + ") is: " + \
        
 print(output.upper())
+
 
 
 
