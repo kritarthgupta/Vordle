@@ -1,4 +1,5 @@
 🟢 Vordle — A BioTwin in the Making of Wordle
+
 Vordle is a sleek, minimalist clone of the iconic Wordle game — a true biotwin in the making. Designed to capture the original experience with a personalized twist, Vordle challenges players to guess a hidden 5-letter word in 6 attempts using visual color-coded feedback for correctness:
 
 • 🟩 Green for correct letter in the correct spot
