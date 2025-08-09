@@ -18,4 +18,5 @@ days_from_start= abs((start_date - today).days)
 answer = answers[start_word_index + days_from_start]
 output= answer #"Today's wordle (" + str(today.strftime("%Y-%m-%d")) + ") is: " + \
        
-print(output)
+print(output.upper())
+
