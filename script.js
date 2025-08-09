@@ -1,4 +1,4 @@
-const WORD = "MUSIC"; // The word to guess, can be changed to any 5-letter word
+const WORD = "BASIC"; // The word to guess, can be changed to any 5-letter word
 // document.title = `Vordle - ${WORD}`; // Set the document title dynamically
 const board = document.getElementById("game-board");
 const keyboard = document.getElementById("keyboard");
@@ -132,4 +132,5 @@ document.addEventListener("keydown", (event) => {
   } else if (/^[a-zA-Z]$/.test(key)) {
     handleKey(key.toUpperCase());
   }
+
 });
