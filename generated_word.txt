@@ -1,1 +1,1 @@
-LADLE
+STRIP
